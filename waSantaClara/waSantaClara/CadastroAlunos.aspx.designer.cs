@@ -24,6 +24,15 @@ namespace waSantaClara
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl msgErro;
 
         /// <summary>
+        /// Controle msgOk.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl msgOk;
+
+        /// <summary>
         /// Controle txtNomeResp.
         /// </summary>
         /// <remarks>
@@ -141,6 +150,15 @@ namespace waSantaClara
         protected global::System.Web.UI.WebControls.TextBox txtBairro;
 
         /// <summary>
+        /// Controle txtCidade.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCidade;
+
+        /// <summary>
         /// Controle seEngajado.
         /// </summary>
         /// <remarks>
@@ -256,14 +274,5 @@ namespace waSantaClara
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvar;
-
-        /// <summary>
-        /// Controle msgOk.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl msgOk;
     }
 }
