@@ -2,12 +2,14 @@
 using Models.Adapters;
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace waSantaClara
 {
     public partial class CadastroAlunos : Page
     {
         private static Responsavel _responsavel { set; get; }
+        private static AlunoIvc _aluno { set; get; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -18,6 +20,8 @@ namespace waSantaClara
 
                 msgOk.Visible = false;
                 ClearMsgErro();
+                ClearFields();
+                txtNomeAluno.Focus();
             }
 
             if (Request.QueryString["rid"] != null)
@@ -60,33 +64,96 @@ namespace waSantaClara
         {
             if (ValidateFields())
             {
-                _responsavel = new Responsavel()
+                DateTime.TryParse(txtDtNasc.Text.Trim(), out DateTime dtnasc);
+
+                int.TryParse(chkSacramentos.SelectedValue, out int sacramento);
+
+                _aluno = new AlunoIvc()
                 {
-                    Nome = txtNomeResp.Text,
+                    Nome = txtNomeAluno.Text.Trim(),
+                    Mae = txtMae.Text.Trim(),
+                    Pai = txtPai.Text.Trim(),
+                    DtNasc = dtnasc,
+                    Sexo = int.Parse(sexo.SelectedValue),
+                    Naturalidade = txtNaturalidade.Text.Trim(),
+                    EstadoCivil = int.Parse(estadoCivil.SelectedValue),
+                    Escolaridade = int.Parse(escolaridade.SelectedValue),
+
+                    Endereco = txtEndereco.Text.Trim(),
+                    Nr = txtNrResid.Text.Trim(),
+                    Bairro = txtBairro.Text.Trim(),
+                    Cidade = txtCidade.Text.Trim(),
+
+                    EhEngajado = int.Parse(seEngajado.SelectedValue),
+                    DescEngajamento = txtEngajamento.Text.Trim(),
+
+                    Sacranmento = sacramento,
+                    VaiAMissa = int.Parse(seVaiAMissa.SelectedValue),
+
+                    OutraReligiao = int.Parse(seOutraReligiao.SelectedValue),
+                    DescReligiao = txtOutraReligiao.Text.Trim(),
+
+                    EhArtista = int.Parse(seArtista.SelectedValue),
+                    DescArte = txtAptidaoArtistica.Text.Trim(),
+
                     //Email = txtEmailResp.Text,
                     //Telefones = txtCelularResp.Text
                 };
 
                 // * Verifica se já existe
-                var check = ResponsavelAdapter.GetByName(_responsavel.Nome);
+                var check = AlunoIvcAdapter.GetByName(_aluno.Nome);
                 if (check.Count > 0)
                 {
-                    if (check[0].Nome.ToLower().Equals(_responsavel.Nome.Trim().ToLower()))
+                    if (check[0].Nome.ToLower().Equals(_aluno.Nome.Trim().ToLower()))
                     {
-                        _responsavel = check[0];        // * Atribui o registro existente no db;
+                        _aluno = check[0];        // * Atribui o registro existente no db;
                         msgErro.Visible = true;
-                        msgErro.InnerText = "Responsável já cadastrado!";
+                        msgErro.InnerText = $"Aluno [ {_aluno.Nome} ] já cadastrado!";
                         txtNomeResp.Focus();
                     }
-                    //btnProximo.Enabled = true;
                 }
-                else if (ResponsavelAdapter.Insert(_responsavel))
+                else if (AlunoIvcAdapter.Insert(_aluno))
                 {
-                    //msgOk.Visible = true;
-                    //btnProximo.Enabled = true;
+                    msgOk.Visible = true;
+                    ClearFields();
+                    txtNomeAluno.Focus();
                 }
             }
         }
+
+        private void ClearFields()
+        {
+            txtNomeAluno.Text = string.Empty;
+            txtPai.Text = string.Empty;
+            txtMae.Text = string.Empty;
+            txtDtNasc.Text = string.Empty;
+            txtNaturalidade.Text = string.Empty;
+
+            sexo.SelectedValue = "0";
+            estadoCivil.SelectedValue = "0";
+            escolaridade.SelectedValue = "0";
+
+            txtEndereco.Text = string.Empty;
+            txtNrResid.Text = string.Empty;
+            txtBairro.Text = string.Empty;
+            txtCidade.Text = string.Empty;
+
+            seEngajado.SelectedValue = "0";
+            txtEngajamento.Text = string.Empty;
+
+            // * Demarca todos os itens marcados do "Sacramento"
+            foreach (ListItem item in chkSacramentos.Items)
+                item.Selected = false;
+
+            seVaiAMissa.SelectedValue = "1"; // * As Vezes
+
+            seOutraReligiao.SelectedValue = "0";
+            txtOutraReligiao.Text = string.Empty;
+
+            seArtista.SelectedValue = "0";
+            txtAptidaoArtistica.Text = string.Empty;
+        }
+
         private void ClearMsgErro()
         {
             msgErro.Visible = false;
@@ -116,7 +183,7 @@ namespace waSantaClara
             if (string.IsNullOrWhiteSpace(txtDtNasc.Text))
             {
                 msgErro.Visible = true;
-                msgErro.InnerText = "Data de Nascimento requerido. Preencha!";
+                msgErro.InnerText = "Data de Nascimento requerida. Preencha!";
                 txtDtNasc.Focus();
                 return false;
             }

@@ -118,7 +118,7 @@ namespace Models.Adapters
             {
                 var strCmd = $"UPDATE bdsc.responsaveis_ivc " +
                     $"SET nome= '{data.Nome}', telefones='{data.Telefones}', " +
-                    $"email= '{data.Email}', ativo= '{data.Ativo}' " +
+                    $"email= '{data.Email}', ativo= {data.Ativo} " +
                     $"WHERE id = {data.Id}";
                 var dbregs = DBAdapt.Exec(strCmd).Result;
                 return dbregs > 0;

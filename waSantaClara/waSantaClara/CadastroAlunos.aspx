@@ -9,6 +9,9 @@
     <main class="container">
         
         <div class="alert alert-danger" role="alert" id="msgErro" runat="server"></div>
+        <div class="alert alert-success" role="alert" id="msgOk" runat="server">
+                Registro salvo com sucesso!
+        </div>
 
         <h4><strong>Responsável:</strong></h4>
         <div class="f-wrap-content">
@@ -110,6 +113,11 @@
             </div>
 
             <div class="col-6 mb-3">
+                <label>Cidade:</label>
+                <asp:TextBox runat="server" ID="txtCidade" CssClass="form-control" placeholder="Digite o Nome do Cidade" />
+            </div>
+
+            <div class="col-6 mb-3">
 
                 <label>Participa de Grupo, Movimento ou Pastoral da Comunidade?</label>
                 <asp:DropDownList runat="server" AppendDataBoundItems="true" ID="seEngajado" CssClass="form-control"
@@ -184,9 +192,6 @@
         <br />
         <div class="col-6 mb-3" style="margin-top: 15px">                
             <asp:Button runat="server" id="btnSalvar" CssClass="btn btn-success" Text="Salvar" OnClick="btnSalvar_Click"/>
-            <div class="alert alert-success" role="alert" id="msgOk" runat="server">
-                Registro salvo com sucesso!
-            </div>
         </div>
 
     </main>
