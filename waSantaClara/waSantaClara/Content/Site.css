@@ -1,0 +1,68 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #ffffe0;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar {
+    background-color: #4c4c45;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.jumbotron {
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+/* Flex Block */
+
+/* Flexbox Styles */
+
+.f-wrap-content {
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items:center;
+    gap: 30px;
+}
+
+.nowrap-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.reverse-content {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+
