@@ -35,15 +35,27 @@
         </div>
     </div>
 
-    <div class="">
-        <asp:GridView ID="requisitos" runat="server" AutoGenerateColumns="false" allowpaging="True">
+    <div class="f-wrap-context">
+        <asp:GridView ID="requisitos" runat="server" AutoGenerateColumns="False" allowpaging="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" Width="971px">
+            <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <Columns>
                 <%--<asp:BoundField DataField="id" HeaderText="" />--%>
-                <asp:BoundField DataField="requisito" HeaderText="Requisitos" />
+                <asp:BoundField DataField="requisito" HeaderText="Requisitos" >
+                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" />
+                </asp:BoundField>
                <%-- <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
                 <asp:BoundField DataField="Date" HeaderText="Date" />
                 <asp:BoundField DataField="Dispatched" HeaderText="Dispatched" />--%>
             </Columns>
+            <FooterStyle BackColor="Tan" />
+            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
     </div>
 

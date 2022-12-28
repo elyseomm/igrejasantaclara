@@ -23,7 +23,7 @@
             <div class="col-6 mb-3">
                 <label>Grau de Parentesco do Responsável:</label>
                 <asp:DropDownList runat="server" AppendDataBoundItems="true" ID="parentescoResp" CssClass="form-control">
-                    <asp:ListItem Text="Mãe"    Value="0" Selected="True" />                   
+                    <asp:ListItem Text="Mãe"    Value="0" Selected="True" />
                     <asp:ListItem Text="Pai"    Value="1" />
                     <asp:ListItem Text="Avós"   Value="2" />
                     <asp:ListItem Text="Tios"   Value="3" />
@@ -35,7 +35,7 @@
          <br />
         
         <h4><strong>Preencha os dados do aluno:</strong></h4>
-        <div class="f-wrap-content">            
+        <div class="f-wrap-content">
 
             <div class="col-6 mb-3">
                 <label>Nome Aluno(Completo):</label>
@@ -128,17 +128,17 @@
             </div>
             
             <div class="col-6 mb-3" id="grupoEngajamento" runat="server">                
-                <asp:Label runat="server" ID="lblEnganjamento" Text="Grupo, Movmento ou Pastoral da Comunidade:" />
+                <asp:Label runat="server" ID="lblEnganjamento" Text="Grupo, Movimento ou Pastoral da Comunidade:" />
                 <asp:TextBox runat="server" ID="txtEngajamento" CssClass="form-control" placeholder="Digite o Nome do Grupo, Movimento ou Pastoral" />
             </div>
 
             <div class="col-6 mb-3">
                 <label>Marque nos sacramentos abaixo, aqueles aos quais você já recebeu:</label>
                 <asp:CheckBoxList runat="server" id="chkSacramentos" >
-                    <asp:ListItem Text=" Batismo"                        Value="1"/>
-                    <asp:ListItem Text=" Primeira Eucaristia(Comunhão)"  Value="2"/>
-                    <asp:ListItem Text=" Crisma"                         Value="3"/>
-                    <asp:ListItem Text=" Matrimônio"                     Value="4"/>
+                    <asp:ListItem Text="&nbsp&nbspBatismo"                        Value="1"/>
+                    <asp:ListItem Text="&nbsp&nbspPrimeira Eucaristia(Comunhão)"  Value="2"/>
+                    <asp:ListItem Text="&nbsp&nbspCrisma"                         Value="3"/>
+                    <asp:ListItem Text="&nbsp&nbspMatrimônio"                     Value="4"/>
                 </asp:CheckBoxList>
             </div>
 
@@ -183,11 +183,7 @@
             </div>
         </div>
 
-        <br />
-
-        <div class="f-wrap_container">
-
-        </div>
+        
 
         <br />
         <div class="col-6 mb-3" style="margin-top: 15px">                

@@ -5,8 +5,12 @@ using System.Linq;
 
 namespace Models.Adapters
 {
-    public class ContatoAdapter
+    public class ContatoAdapter : BaseAdapter
     {
+        public ContatoAdapter()
+        {
+            tableName = "contatos";
+        }
         private static Contato ParseContatoFromDataRow(DataRow dr)
         {
             return new Contato()
@@ -23,8 +27,7 @@ namespace Models.Adapters
         public static List<Contato> All()
         {
             List<Contato> list = null;
-            var strCmd = "SELECT * FROM bdsc.contatos";
-            var dbcontatos = DBAdapt.GetTable(strCmd);
+            var dbcontatos = GetAll();
             if (dbcontatos != null)
             {
                 list = new List<Contato>();
@@ -39,7 +42,7 @@ namespace Models.Adapters
         {
             List<Contato> list = null;
             var strCmd = $"SELECT * FROM bdsc.contatos WHERE nome LIKE '%{nome}%' AND ativo = 1";
-            var dbcontatos = DBAdapt.GetTable(strCmd);
+            var dbcontatos = GetBySQL(strCmd);
             if (dbcontatos != null)
             {
                 list = new List<Contato>();
@@ -54,7 +57,7 @@ namespace Models.Adapters
         {
             List<Contato> list = null;
             var strCmd = $"SELECT * FROM bdsc.contatos WHERE funcao LIKE '%{funcao}%' AND ativo = 1";
-            var dbcontatos = DBAdapt.GetTable(strCmd);
+            var dbcontatos = GetBySQL(strCmd);
             if (dbcontatos != null)
             {
                 list = new List<Contato>();

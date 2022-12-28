@@ -42,10 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\AlunoIvcAdapter.cs" />
+    <Compile Include="Adapters\BaseAdapter.cs" />
+    <Compile Include="Adapters\LoginAdapter.cs" />
     <Compile Include="Adapters\ResponsavelAdapter.cs" />
     <Compile Include="Adapters\RequisitoPadrinhoBatismoAdapter.cs" />
     <Compile Include="Adapters\ContatoAdapter.cs" />
     <Compile Include="Adapters\ParoquiaAdapter.cs" />
+    <Compile Include="Models\UsuarioLogin.cs" />
+    <Compile Include="Models\VwTurmasDto.cs" />
+    <Compile Include="Models\AlunoIvcDto.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\AlunoIvc.cs" />
     <Compile Include="Models\Responsavel.cs" />

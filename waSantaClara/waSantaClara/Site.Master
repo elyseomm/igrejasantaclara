@@ -14,8 +14,7 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <script src="~/Scripts/WebForms/jMask/jquery.mask.js" type="text/javascript" asp-append-version="true"></script>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />    
 </head>
 <body>
     <form runat="server">
@@ -56,10 +55,12 @@
                         <li><a runat="server" href="~/Catequese">Catequese</a></li>
                         <li><a runat="server" href="~/Sobre">Sobre</a></li>
                         <li><a runat="server" href="~/Contato">Contato</a></li>
+                        <li><a runat="server" href="~/AreaRestrita">Área Restrita</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
