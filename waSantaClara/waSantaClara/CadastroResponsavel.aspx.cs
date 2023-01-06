@@ -2,6 +2,7 @@
 using Models.Adapters;
 using System;
 using System.Web.UI;
+using Custom;
 
 namespace waSantaClara
 {
@@ -50,7 +51,8 @@ namespace waSantaClara
 
         protected void btnProximo_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"CadastroAlunos.aspx?rid={_responsavel.Id}");
+            var str = Helper.EncodeToBase64(_responsavel.Id.ToString()+"_v@lwE");
+            Response.Redirect($"CadastroAlunos.aspx?rid={str}");
         }
 
         private void ClearMsgErro()

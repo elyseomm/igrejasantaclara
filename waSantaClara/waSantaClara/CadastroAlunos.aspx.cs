@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Custom;
+using Models;
 using Models.Adapters;
 using System;
 using System.Web.UI;
@@ -27,7 +28,10 @@ namespace waSantaClara
             if (Request.QueryString["rid"] != null)
             {
                 // * Carrega o responsável do Aluno IVC
-                int.TryParse(Request.QueryString["rid"].ToString(), out int respid);
+                var rid = Helper.DecodeFrom64(Request.QueryString["rid"].ToString());
+                rid = rid.Replace("_v@lwE",""); // * Código Decodificador
+
+                int.TryParse(rid, out int respid);
 
                 if (_responsavel == null || (_responsavel != null && _responsavel.Id != respid))
                 {
@@ -96,14 +100,21 @@ namespace waSantaClara
                     EhArtista = int.Parse(seArtista.SelectedValue),
                     DescArte = txtAptidaoArtistica.Text.Trim(),
 
-                    //Email = txtEmailResp.Text,
-                    //Telefones = txtCelularResp.Text
+                    IdResponsavel = _responsavel.Id,
+                    GrauParentesco = int.Parse(parentescoResp.SelectedValue),
+
                 };
 
                 // * Verifica se já existe
                 var check = AlunoIvcAdapter.GetByName(_aluno.Nome);
                 if (check.Count > 0)
                 {
+                    var geo = new GeoLocation();
+                    geo.Ip = "201.9.33.95";
+                    geo.ApiKey = "75d856dd901a84222b53b16a3c918bb1";
+                    var resp = geo.GetLocation();
+
+
                     if (check[0].Nome.ToLower().Equals(_aluno.Nome.Trim().ToLower()))
                     {
                         _aluno = check[0];        // * Atribui o registro existente no db;
@@ -156,6 +167,7 @@ namespace waSantaClara
 
         private void ClearMsgErro()
         {
+            msgOk.Visible = false;
             msgErro.Visible = false;
             msgErro.InnerText = "";
         }
@@ -167,7 +179,7 @@ namespace waSantaClara
             if (string.IsNullOrWhiteSpace(txtNomeAluno.Text))
             {
                 msgErro.Visible = true;
-                msgErro.InnerText = "Nome do Aluno requerido. Preencha!";
+                msgErro.InnerText = "Nome do aluno requerido. Preencha!";
                 txtNomeAluno.Focus();
                 return false;
             }
@@ -183,7 +195,7 @@ namespace waSantaClara
             if (string.IsNullOrWhiteSpace(txtDtNasc.Text))
             {
                 msgErro.Visible = true;
-                msgErro.InnerText = "Data de Nascimento requerida. Preencha!";
+                msgErro.InnerText = "Data de nascimento requerida. Preencha!";
                 txtDtNasc.Focus();
                 return false;
             }

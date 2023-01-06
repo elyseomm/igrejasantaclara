@@ -28,6 +28,21 @@ textarea {
     text-align: center;
 }
 
+/* My Styles */
+
+.login-content {
+    display: flex;
+    align-items: center;
+
+
+    margin: 10px;
+    padding: 50px;   
+    
+    background-color: lightgrey;
+
+    width: 40%;
+}
+
 
 /* Flex Block */
 
@@ -46,6 +61,14 @@ textarea {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
+}
+
+.nowrap-col-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .reverse-content {

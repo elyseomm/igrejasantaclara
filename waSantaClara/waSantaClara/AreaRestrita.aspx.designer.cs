@@ -11,7 +11,7 @@ namespace waSantaClara
 {
 
 
-    public partial class ListagemAlunos
+    public partial class AreaRestrita
     {
 
         /// <summary>
@@ -24,48 +24,30 @@ namespace waSantaClara
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl msgErro;
 
         /// <summary>
-        /// Controle txtNomeAluno.
+        /// Controle txtUsuario.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeAluno;
+        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
 
         /// <summary>
-        /// Controle txtCatequista.
+        /// Controle txtSenha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCatequista;
+        protected global::System.Web.UI.WebControls.TextBox txtSenha;
 
         /// <summary>
-        /// Controle txtResponsavel.
+        /// Controle btnLogin.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtResponsavel;
-
-        /// <summary>
-        /// Controle btnPesquisar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisar;
-
-        /// <summary>
-        /// Controle alunos.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView alunos;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
     }
 }

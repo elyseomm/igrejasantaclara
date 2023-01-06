@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6BB032B-DBEB-4245-AF91-046B0547C2C0}</ProjectGuid>
+    <ProjectGuid>{713DF1DA-04EA-4855-8016-80E3EC365895}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Models</RootNamespace>
-    <AssemblyName>Models</AssemblyName>
+    <RootNamespace>Custom</RootNamespace>
+    <AssemblyName>Custom</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,29 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\AlunoIvcAdapter.cs" />
-    <Compile Include="Adapters\BaseAdapter.cs" />
-    <Compile Include="Adapters\LoginAdapter.cs" />
-    <Compile Include="Adapters\ResponsavelAdapter.cs" />
-    <Compile Include="Adapters\RequisitoPadrinhoBatismoAdapter.cs" />
-    <Compile Include="Adapters\ContatoAdapter.cs" />
-    <Compile Include="Adapters\ParoquiaAdapter.cs" />
-    <Compile Include="Models\UsuarioLogin.cs" />
-    <Compile Include="Models\VwTurmasDto.cs" />
-    <Compile Include="Models\AlunoIvcDto.cs" />
-    <Compile Include="Models\Contato.cs" />
-    <Compile Include="Models\AlunoIvc.cs" />
-    <Compile Include="Models\Responsavel.cs" />
-    <Compile Include="Models\RequisitosPadrinhoBatismo.cs" />
-    <Compile Include="Models\Paroquia.cs" />
+    <Compile Include="GeoLocation.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DBModel\Databse.csproj">
-      <Project>{db70b680-0150-4617-b2a3-373f082a433b}</Project>
-      <Name>Databse</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

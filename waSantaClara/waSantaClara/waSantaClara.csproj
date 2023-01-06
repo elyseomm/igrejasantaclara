@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CadastroResponsavel.aspx" />
+    <Content Include="AreaRestrita.aspx" />
     <Content Include="Content\Imagens\imgSantaClara.jpg" />
     <Content Include="Content\Imagens\sc06.jpg" />
     <Content Include="Content\Imagens\sc07.jpg" />
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="CadastroResponsavel.aspx.designer.cs">
       <DependentUpon>CadastroResponsavel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaRestrita.aspx.cs">
+      <DependentUpon>AreaRestrita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaRestrita.aspx.designer.cs">
+      <DependentUpon>AreaRestrita.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matrimonio.aspx.cs">
       <DependentUpon>Matrimonio.aspx</DependentUpon>
@@ -290,6 +298,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Custom\Custom.csproj">
+      <Project>{713df1da-04ea-4855-8016-80e3ec365895}</Project>
+      <Name>Custom</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{f6bb032b-dbeb-4245-af91-046b0547c2c0}</Project>
       <Name>Models</Name>

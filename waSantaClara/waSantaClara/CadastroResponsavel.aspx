@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="col-6 mb-3" style="margin-top: 15px">                
-            <asp:Button runat="server" id="btnProximo" CssClass="btn btn-primary" Text="Continuar &raquo;" OnClick="btnProximo_Click"/>
+            <asp:Button runat="server" id="btnProximo" CssClass="btn btn-primary" Text="Preencher Dados do Aluno &raquo;" OnClick="btnProximo_Click"/>
         </div>
 
     </main>
@@ -52,9 +52,9 @@
         $(function() {
 
 
-            $("#MainContent_txtCelularResp").mask('(99)99999-9999', { reverse: true });
+            //$("#MainContent_txtCelularResp").mask('(99)99999-9999', { reverse: true });
 
-            $('#MainContent_seEngajado').on('change', function () {
+            //$('#MainContent_seEngajado').on('change', function () {
                                 
                 //if (this.value == 0) {
                 //    $("#divTxtEngajamento").css("visibility", "hidden")
@@ -65,7 +65,7 @@
                 //    console.log('Show!')
                 //    $('#MainContent_txtEngajamento').focus()
                 //}
-            })
+            //})
 
         })
 
