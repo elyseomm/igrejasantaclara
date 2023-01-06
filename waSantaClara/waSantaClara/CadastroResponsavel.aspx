@@ -39,6 +39,7 @@
             <div class="alert alert-success" role="alert" id="msgOk" runat="server">
                 Registro salvo com sucesso!
             </div>
+            <asp:Button runat="server" id="btnConsultar" CssClass="btn btn-primary" Text="Consultar" OnClick="btnConsultar_Click"/>
         </div>
         <div class="col-6 mb-3" style="margin-top: 15px">                
             <asp:Button runat="server" id="btnProximo" CssClass="btn btn-primary" Text="Preencher Dados do Aluno &raquo;" OnClick="btnProximo_Click"/>

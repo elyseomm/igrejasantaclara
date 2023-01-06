@@ -2,6 +2,7 @@
 using Models;
 using Models.Adapters;
 using System;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -109,18 +110,19 @@ namespace waSantaClara
                 var check = AlunoIvcAdapter.GetByName(_aluno.Nome);
                 if (check.Count > 0)
                 {
-                    var geo = new GeoLocation();
-                    geo.Ip = "201.9.33.95";
-                    geo.ApiKey = "75d856dd901a84222b53b16a3c918bb1";
-                    var resp = geo.GetLocation();
-
-
-                    if (check[0].Nome.ToLower().Equals(_aluno.Nome.Trim().ToLower()))
+                    var found = check.Where(x => x.Nome.ToLower().StartsWith(_aluno.Nome.Trim().ToLower())).FirstOrDefault();
+                    if (found != null)                        
                     {
-                        _aluno = check[0];        // * Atribui o registro existente no db;
+                        _aluno = found;        // * Atribui o registro existente no db;
                         msgErro.Visible = true;
                         msgErro.InnerText = $"Aluno [ {_aluno.Nome} ] já cadastrado!";
                         txtNomeResp.Focus();
+                    }
+                    else if (AlunoIvcAdapter.Insert(_aluno))
+                    {
+                        msgOk.Visible = true;
+                        ClearFields();
+                        txtNomeAluno.Focus();
                     }
                 }
                 else if (AlunoIvcAdapter.Insert(_aluno))

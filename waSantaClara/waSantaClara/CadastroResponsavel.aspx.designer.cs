@@ -15,6 +15,15 @@ namespace waSantaClara
     {
 
         /// <summary>
+        /// Controle BodyContent.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Content BodyContent;
+
+        /// <summary>
         /// Controle msgErro.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace waSantaClara
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl msgOk;
+
+        /// <summary>
+        /// Controle btnConsultar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConsultar;
 
         /// <summary>
         /// Controle btnProximo.

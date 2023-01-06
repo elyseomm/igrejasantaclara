@@ -3,6 +3,7 @@ using Models.Adapters;
 using System;
 using System.Web.UI;
 using Custom;
+using System.Linq;
 
 namespace waSantaClara
 {
@@ -53,6 +54,38 @@ namespace waSantaClara
         {
             var str = Helper.EncodeToBase64(_responsavel.Id.ToString()+"_v@lwE");
             Response.Redirect($"CadastroAlunos.aspx?rid={str}");
+        }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            var nome = txtNomeResp.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                msgErro.Visible = true;
+                msgErro.InnerText = "Nome do Responsável requerido. Preencha!";
+                txtNomeResp.Focus();
+                return;
+            }
+
+            // * Verifica se já existe
+            var check = ResponsavelAdapter.GetByName(nome);
+            if (check.Count > 0)
+            {
+                nome = nome.ToLower();
+                var found = check.Where(x => x.Nome.ToLower().StartsWith(nome)).FirstOrDefault();
+                if (found != null)
+                {
+                    _responsavel = found;        // * Atribui o registro existente no db;
+                    msgErro.Visible = true;
+                    msgErro.InnerText = $"Responsável [{found.Nome}] já cadastrado!";
+                    txtNomeResp.Focus();
+                    btnSalvar.Enabled = false;
+                    btnProximo.Enabled = true;
+                }
+                
+            }
+            
         }
 
         private void ClearMsgErro()

@@ -13,5 +13,23 @@ namespace waSantaClara
 
     public partial class _Default
     {
+
+        /// <summary>
+        /// Controle BodyContent.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Content BodyContent;
+
+        /// <summary>
+        /// Controle mapLink.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink mapLink;
     }
 }

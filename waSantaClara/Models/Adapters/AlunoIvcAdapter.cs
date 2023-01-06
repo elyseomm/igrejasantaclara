@@ -7,8 +7,13 @@ using System.Linq;
 namespace Models.Adapters
 {
     public class AlunoIvcAdapter: BaseAdapter
-    {
+    {        
         public AlunoIvcAdapter()
+        {
+            SetTableName();
+        }
+
+        public static void SetTableName()
         {
             tableName = "alunos_ivc";
         }
@@ -169,6 +174,7 @@ namespace Models.Adapters
 
         public static List<AlunoIvc> GetByName(string nome)
         {
+            SetTableName();
             List<AlunoIvc> list = null;
             var strCmd = $"SELECT * FROM bdsc.{tableName} WHERE nome LIKE '%{nome}%' AND ativo = 1";
             var dbregs = GetBySQL(strCmd);
@@ -185,6 +191,7 @@ namespace Models.Adapters
 
         public static List<AlunoIvcDto> GetListagem(string sql)
         {
+            SetTableName();
             List<AlunoIvcDto> list = null;
             var newSQL = $"SELECT a.*, r.nome 'responsavel', '' catequista, '' sala, 2022 ano " +
                         $"FROM bdsc.{tableName} a " +
@@ -236,6 +243,7 @@ namespace Models.Adapters
         {
             try
             {
+                SetTableName();
                 var strCmd = $"INSERT INTO bdsc.{tableName}(nome, mae, pai, dtnasc, sexo, naturalidade, estadocivil," +
                     $"escolaridade, endereco, nr, bairro, cidade, ehengajado, desc_engajamento, sacramento, vaiamissa," +
                     $"outra_religiao, desc_religiao, ehartista , desc_arte, obs , idresponsavel , grauparentesco)" +
@@ -257,6 +265,7 @@ namespace Models.Adapters
         {
             try
             {
+                SetTableName();
                 var strCmd = $"UPDATE bdsc.{tableName} SET nome='{data.Nome}', mae='{data.Mae}', pai= '{data.Pai}', dtnasc=STR_TO_DATE('{data.DtNasc.ToShortDateString()}','%d/%m/%Y')," +
                     $"sexo= {data.Sexo}, naturalidade='{data.Naturalidade}'," +
                     $"estadocivil= {data.EstadoCivil}, escolaridade={data.Escolaridade}," +

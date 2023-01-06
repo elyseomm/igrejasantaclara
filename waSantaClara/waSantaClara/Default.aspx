@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Igreja Santa Clara" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="waSantaClara._Default" %>
 
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
@@ -11,7 +12,8 @@
         </div>
         <div style="margin-top:2vh">
             <span>
-                <a href="https://www.google.com/maps/dir/-3.0758917,-59.9912634/Igreja+Católica+Santa+Clara+-+R.+31,+1-169+-+Cidade+Nova,+Manaus+-+AM,+69097-758/@-3.0443107,-60.0087601,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x926c190d281bc01b:0x5c9f2e65399f9d48!2m2!1d-59.9710091!2d-3.0132874"><image src="/Content/Imagens/googlemaps.png" width="35px"></a>
+                <asp:HyperLink ID="mapLink" runat="server"><image src="/Content/Imagens/googlemaps.png" width="35px"></asp:HyperLink>
+                <%--<a href="https://www.google.com/maps/dir/-3.0758917,-59.9912634/Igreja+Católica+Santa+Clara+-+R.+31,+1-169+-+Cidade+Nova,+Manaus+-+AM,+69097-758/@-3.0443107,-60.0087601,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x926c190d281bc01b:0x5c9f2e65399f9d48!2m2!1d-59.9710091!2d-3.0132874"><image src="/Content/Imagens/googlemaps.png" width="35px"></a>--%>
             </span>
         </div>        
         <p style="margin-top:2vh">Endereço: R. 31, 1-169 - Cidade Nova, Manaus - AM, 69097-758</p>
